@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #95B6FA;
+}
+.container{
+    position: relative;
+    height: 500px;
+    width: 260px;
+    padding: 15px;
+    background-color: #F1EEFF;
+}
+.container h2,
+.container > p{
+    text-align: center;
+    color: #545363;
+}
+.container .imgBox{
+    width: 120px;
+    margin: 30px auto;
+    border-radius: 50%;
+    position: relative;    
+}
+.container img{
+    position: absolute;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #3C7FFD;
+    opacity: 0;
+}
+.section{
+    height: 240px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FEFEFE;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.details{
+    padding: 20px 15px;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+}
+.details p{
+    margin-top: 10px;
+    color: #545363;
+    font-size: 14px;
+}
+.slideSection{
+    padding: 0 15px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slideSection .slides{
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.slideSection .slides span{
+    display: block;
+    height: 7px;
+    width: 7px;
+    border-radius: 20px;
+    background-color: #545363;
+    cursor: pointer;
+}
+.slideSection .slides span.active{
+    width: 20px;
+    background-color: #3C7FFD;
+}
+.slideSection button{
+    height: 35px;
+    width: 80px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #3C7FFD;
+    color: #FEFEFE;
+    cursor: pointer;
+}
+.container img.active{
+    animation: fadein 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+.details.active{
+    animation: slideleft 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+@keyframes slideleft {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

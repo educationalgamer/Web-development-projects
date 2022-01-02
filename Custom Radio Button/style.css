@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    font-family: 'Baloo 2', cursive;
+    background: #d1d8ec;
+}
+body{
+    display: grid;
+    place-items: center;
+}
+input{
+    display: none;
+}
+p{
+    font-size: 1.5rem;
+    padding-left: 15px;
+}
+label{
+    height: 70px;
+    width: 300px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input[type="radio"]:checked + label{
+    border: 2px solid #3c40c6;
+}
+.radio-btn{
+    position: relative;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3c40c6;
+    border-color: #3c40c6!important;
+}
+.radio-btn::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.117647) 0 0 .8vw 0, rgba(0, 0, 0, 0.239216) 0 .8vw .8vw 0;
+}
+.radio-btn::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 50%;
+    transform: scale(0);
+}
+input[type="radio"]:checked + label .radio-btn {
+    background: white;
+    border: 5px solid;
+    box-shadow: inset rgba(0, 0, 0, 0.117647) 0 0 .6vw 0, inset rgba(0, 0, 0, 0.239216) 0 .6vw .8vw 0;
+}
+input[type="radio"]:checked + label .radio-btn::before{
+    width: 25px;
+    height: 25px;
+    background: #3c40c6;
+    animation-name: checked-radio-4;
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    animation-fill-mode: both;
+}
+@keyframes checked-radio-4 {
+    0% {
+        transform: rotate(0) translateY(-4.8vw) scale(.2);
+    }
+    83% {
+        transform: rotate(360deg) translateY(-2.5vw) scale(1);
+        transform-origin: 2vw;
+    }
+    88% {
+        transform: translateY(.6vw) scale(1);
+    }
+    93% {
+        transform: translateY(-.9vw) scale(1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+img{
+    height: 60px;
+    margin-left: 100px;
+}

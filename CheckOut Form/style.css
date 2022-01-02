@@ -1,0 +1,246 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    background: #d1d8ec;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    letter-spacing: 0.03em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+p, a {
+    color: #fff;
+}
+img {
+    display: block;
+    width: 100%;
+}
+select, input {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    letter-spacing: 0.05em;
+}
+button {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    letter-spacing: 0.03em;
+}
+.container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.product {
+    width: 100%;
+    max-width: 750px;
+    margin-bottom: 15px;
+}
+.card-details {
+    position: relative;
+    padding: 25px;
+    background: linear-gradient(to right, #013552 0%, #00324e 100%);
+    color: #fff;
+}
+.card-details__fieldset {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-left: 0;
+    padding: 0;
+    border: none;
+}
+.card-details__heading {
+    display: block;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+.card-details__cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.card-details__cards-item {
+    position: relative;
+    width: 18%;
+    max-width: 53px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card-details__card-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    z-index: 1;
+}
+.card-details__card-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+    z-index: 0;
+}
+.card-details__cards-image {
+    border-radius: 5px;
+    opacity: 0.2;
+    transition: opacity 0.25s ease-in-out;
+}
+.card-details__card-input:checked ~ .card-details__cards-image, .card-details__card-input:hover ~ .card-details__cards-image, .card-details__card-input:active ~ .card-details__cards-image, .card-details__card-input:focus ~ .card-details__cards-image {
+    opacity: 1;
+}
+.card-details__number {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 15px;
+}
+.card-details__number-field {
+    position: relative;
+    width: 15%;
+}
+.card-details__number-card {
+    width: 14%;
+    margin-left: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card-details__number-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+    clip: rect(0, 0, 0);
+}
+.card-details__number-input, .card-details__expiration-date-input, .card-details__security-code-input {
+    width: 100%;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-left: none;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1em;
+    transition: all 0.25s ease-in-out;
+    appearance: none;
+    text-align: center;
+}
+.card-details__number-input:focus, .card-details__expiration-date-input:focus, .card-details__security-code-input:focus, .card-details__number-input:active, .card-details__expiration-date-input:active, .card-details__security-code-input:active, .card-details__number-input--valid, .card-details__expiration-date-input--valid, .card-details__security-code-input--valid {
+    color: #d40b5e;
+    border-bottom: 2px solid #d40b5e;
+}
+.card-details__holder {
+    position: relative;
+    margin-top: 10px;
+}
+.card-details__holder-label, .card-details__expiration-date-label, .card-details__security-code-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+    clip: rect(0, 0, 0);
+}
+.card-details__holder-input {
+    width: 100%;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    border-left: none;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1em;
+    transition: all 0.25s ease-in-out;
+    appearance: none;
+}
+.card-details__holder-input:focus, .card-details__holder-input:active, .card-details__holder-input--valid {
+    color: #d40b5e;
+    border-bottom: 2px solid #d40b5e;
+}
+.card-details__expiration, .card-details__security {
+    display: inline-block;
+    vertical-align: middle;
+}
+.card-details__expiration {
+    margin-right: 50px;
+}
+.card-details__expiration-date {
+    position: relative;
+    max-width: 66px;
+    margin-top: 15px;
+}
+.card-details__details__security-code {
+    position: relative;
+    max-width: 29px;
+    margin-top: 15px;
+}
+.card-details__submit {
+    display: block;
+    width: 100%;
+    background: radial-gradient(ellipse at center, #f93090 0%, #f10052 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 16px 35px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+}
+@media screen and (min-width: 40em) {
+    html, body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+   }
+    .card-details {
+        padding-right: 50px;
+        padding-bottom: 35px;
+        padding-left: 50px;
+   }
+    .card-details__holder {
+        width: calc(80% - 10px);
+   }
+}
+@media screen and (min-width: 47.938em) {
+    .card-details {
+        max-width: 450px;
+        box-shadow: 0px 0px 15px 8px rgba(0, 0, 0, 0.35);
+   }
+    .card-details__submit {
+        position: absolute;
+        right: 20px;
+        bottom: -25px;
+        width: auto;
+        box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.35);
+   }
+    .card-details__fieldset:last-of-type {
+        margin-bottom: 0;
+   }
+}
