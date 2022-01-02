@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', cursive;
+}
+:root{
+    --gradientBlue: linear-gradient(to right top, #4052b6, #3c55c1, #3558cc, #2c5cd7, #1c5fe2);
+    --gradientRed: linear-gradient(to right top, #ec1e64, #ec1c5e, #ec1b58, #ec1a52, #ec1a4c);
+    --gradientYellow: linear-gradient(to right bottom, #f25e20, #f56e19, #f77d10, #f88c06, #f89b00);
+    --textBlue: #4052b6;
+    --textred: #ec1e64;
+    --textYellow: #f88c06;
+}
+.container{
+    width: 460px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    position: relative;
+    height: 35px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #fff;
+    cursor: pointer;
+    transition:all 0.2s linear;
+}
+.btn:after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    border-radius: 25px;
+    z-index: -1;
+}
+.btn span{
+    position: relative;
+    font-size: 14px;letter-spacing: 1px;z-index: 10;  transition: all 0.2s linear;
+}
+.btn span::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px; background-color: #fff;
+}
+.btn:nth-child(1)::after{
+    background: var(--gradientBlue);
+    box-shadow: 0px 6px 15px #4052b6bd;
+}
+.btn:nth-child(2)::after{
+    background: var(--gradientRed);
+    box-shadow: 0px 6px 15px #ec1e63b0;
+}
+.btn:nth-child(3)::after{
+    background: var(--gradientYellow);
+    box-shadow: 0px 6px 15px #f59906cb;
+}
+
+.btn:nth-child(1) > span{
+    color: var(--textBlue);
+}
+.btn:nth-child(2) > span{
+    color: var(--textred);
+}
+.btn:nth-child(3) > span{
+    color: var(--textYellow);
+}
+.btn:nth-child(1):hover{
+    background: var(--gradientBlue);
+}
+.btn:nth-child(2):hover{
+    background: var(--gradientRed)
+}
+.btn:nth-child(3):hover{
+    background: var(--gradientYellow);
+}
+.btn:hover > span{
+    color: #FFF;
+}
+.btn:hover span::after{
+    animation: scale-up-hor-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@keyframes scale-up-hor-left {
+    0% {
+              width: 0%;
+    }
+    100% {
+             width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
